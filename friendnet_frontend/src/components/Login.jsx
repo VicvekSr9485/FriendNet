@@ -5,7 +5,11 @@ import { FcGoogle } from 'react-icons/fc';
 import shareVideo from '../assets/share.mp4';
 import logo from '../assets/logowhite.png';
 
-function Login() {
+//import { client } from '../client';
+
+const Login = () => {
+  //const navigate = useNavigate();
+
   const ResponseGoogle = (response) => {
     localStorage.setItem('user', JSON.stringify(response.profileObj))
 
@@ -17,6 +21,11 @@ function Login() {
       userName: name,
       image: imageUrl,
     }
+
+    // client.createIfNotExists(doc)
+    // .then(() => {
+    //   navigate('/', { replace: true })
+    // })
   }
  
   return (
@@ -52,7 +61,7 @@ function Login() {
               )}
 
               onSuccess={ResponseGoogle}
-              onError={ResponseGoogle}
+              onFailure={ResponseGoogle}
               cookiePolicy="single_host_origin"
             />
           </div>
