@@ -6,6 +6,19 @@ import shareVideo from '../assets/share.mp4';
 import logo from '../assets/logowhite.png';
 
 function Login() {
+  const ResponseGoogle = (response) => {
+    localStorage.setItem('user', JSON.stringify(response.profileObj))
+
+    const { name, googleId, imageUrl } = response.profileObj;
+
+    const doc = {
+      _id: googleId,
+      _type: 'user',
+      userName: name,
+      image: imageUrl,
+    }
+  }
+ 
   return (
     <div  className="flex justify-start items-center flex-col h-screen">
       <div className="relative w-full h-full">
@@ -31,10 +44,16 @@ function Login() {
                 <button
                   type="button"
                   className="bg-mainColor flex justify-center items-center p-3 rounded-lg cursor-pointer outline-none"
+                  onClick={renderProps.onClick}
+                  disabled={renderProps.disabled}
                 >
                   <FcGoogle className="mr-4" /> Sing in with Google
                 </button>
               )}
+
+              onSuccess={ResponseGoogle}
+              onError={ResponseGoogle}
+              cookiePolicy="single_host_origin"
             />
           </div>
         </div>
