@@ -12,21 +12,19 @@ const Login = () => {
     const navigate = useNavigate()
 
     const responseGoogle = (response) => {
-
-    
     try{
         localStorage.setItem('user', JSON.stringify(response.profileObj))
         
         var decodedHeader = jwt_decode(response.credential);
         console.log(decodedHeader)
         //destrcure some of the props from that response
-        const {name, sub, imageUrl } = decodedHeader
+        const {name, sub, picture } = decodedHeader
       
         const doc ={
             _id: sub,
             _type: 'user',
             userName: name,
-            image: imageUrl, 
+            image: picture, 
         } 
         
         client.createIfNotExists(doc)
@@ -37,8 +35,8 @@ const Login = () => {
         .catch(error => console.log(error))
     }
     catch (e) {
-        localStorage.clear() //what you need to do incase the jwt is not valid
-        console.log(e) //for your own debugging
+        localStorage.clear() //incase the jwt is not valid
+        console.log(e) //for debugging
     }
 }
 return (
@@ -58,7 +56,6 @@ return (
         </div>
         <div className='shadow-2xl '>
               <GoogleLogin
-                
                 render={(renderProps) =>(
                     <button 
                     onClick={renderProps.onClick} 
@@ -68,7 +65,7 @@ return (
                     </button>
                 )}
                 onSuccess = {responseGoogle}
-                onFailure = {responseGoogle}
+                onError = {() => console.log('Error')}
                 cookiePolicy = 'single_host_origin'
                 />
         </div>
