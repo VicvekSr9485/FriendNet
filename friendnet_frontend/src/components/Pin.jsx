@@ -119,10 +119,9 @@ const Pin = ({ pin }) => {
              }}
              className="bg-white p-2 rounded-full w-8 h-8 flex items-center justify-center text-dark opacity-75 hover:opacity-100 outline-none"
            >
-             <AiTwotoneDelete />
+              <AiTwotoneDelete />
            </button>
-           )
-        }
+           )}
             </div>
           </div>
         )}
@@ -130,7 +129,7 @@ const Pin = ({ pin }) => {
       <Link to={`/user-profile/${postedBy?._id}`} className="flex gap-2 mt-2 items-center">
         <img
           className="w-8 h-8 rounded-full object-cover"
-          src={postedBy?.image}
+          src={postedBy?.picture}
           alt="user-profile"
         />
         <p className="font-semibold capitalize">{postedBy?.userName}</p>
