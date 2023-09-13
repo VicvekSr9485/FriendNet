@@ -6,7 +6,6 @@ import { GoogleOAuthProvider } from '@react-oauth/google';
 import App from './App';
 import './index.css';
 
-// Use createRoot to render your app in React 18
 const root = createRoot(document.getElementById('root'));
 
 root.render(

@@ -1,15 +1,15 @@
-import React from 'react'
+import React from 'react';
 import { GoogleLogin } from '@react-oauth/google';
-import {FcGoogle}  from 'react-icons/fc' 
-import sharedVideo from '../assets/share.mp4'
-import Logo from '../assets/logowhite.png'
+import {FcGoogle}  from 'react-icons/fc';
+import sharedVideo from '../assets/share.mp4';
+import Logo from '../assets/logowhite.png';
 import {client} from '../client';
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
 import jwt_decode from "jwt-decode";
 
 const Login = () => {
 
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     const responseGoogle = (response) => {
     try{
