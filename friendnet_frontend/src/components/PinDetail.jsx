@@ -91,7 +91,7 @@ const PinDetail = ({ user }) => {
               </h1>
               <p className="mt-3">{pinDetail?.about}</p>
             </div>
-            <Link to={`/user-profile/${pinDetail?.postedBy._id}`} className="flex gap-2 mt-5 items-center bg-white rounded-lg ">
+            <Link to={`/user-profile/${pinDetail.postedBy?._id}`} className="flex gap-2 mt-5 items-center bg-white rounded-lg ">
               <img src={pinDetail?.postedBy.image} className="w-10 h-10 rounded-full" alt="user-profile" />
               <p className="font-bold">{pinDetail?.postedBy.userName}</p>
             </Link>
