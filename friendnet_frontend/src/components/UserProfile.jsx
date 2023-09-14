@@ -55,11 +55,11 @@ const UserProfile = () => {
   }, [text, userId]);
 
   const handleLogout = () => {
-    localStorage.clear();
+    localStorage.removeItem('user');
     navigate('/login');
   };
 
-  if (!user) {
+  if (user === null) {
     return <Spinner message="Loading profile" />;
   }
 

@@ -88,7 +88,7 @@ const CreatePin = ({ user }) => {
             )}
             {
               wrongImageType && (
-                <p>It&apos;s wrong file type.</p>
+                <p>It's a wrong file type.</p>
               )
             }
             {!imageAsset ? (

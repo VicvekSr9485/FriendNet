@@ -8,10 +8,25 @@ const App = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const User = localStorage.getItem('user') !== 'undefined' ? JSON.parse(localStorage.getItem('user')) : localStorage.clear();
-
-    if (!User) navigate('/login');
-  }, []);
+    const userJSON = localStorage.getItem('user');
+  
+    if (userJSON === null) {
+      navigate('/login');
+    } else {
+      try {
+        const user = JSON.parse(userJSON);
+        if (user && user.hasOwnProperty('profileObj') && user.hasOwnProperty('credential')) {
+        } else {
+          console.error('Invalid user data in localStorage:', user);
+          navigate('/login');
+        }
+      } catch (e) {
+        console.error('Error parsing user JSON:', e);
+        navigate('/login');
+      }
+    }
+  }, []);  
+  
 
   return (
     <Routes>
