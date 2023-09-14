@@ -9,23 +9,12 @@ const App = () => {
 
   useEffect(() => {
     const userJSON = localStorage.getItem('user');
+    const user = userJSON ? JSON.parse(userJSON) : null;
   
-    if (userJSON === null) {
+    if (user === null) {
       navigate('/login');
-    } else {
-      try {
-        const user = JSON.parse(userJSON);
-        if (user && user.hasOwnProperty('profileObj') && user.hasOwnProperty('credential')) {
-        } else {
-          console.error('Invalid user data in localStorage:', user);
-          navigate('/login');
-        }
-      } catch (e) {
-        console.error('Error parsing user JSON:', e);
-        navigate('/login');
-      }
     }
-  }, []);  
+  }, []);
   
 
   return (

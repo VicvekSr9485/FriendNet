@@ -12,9 +12,8 @@ const Login = () => {
 
   const responseGoogle = (response) => {
     try {
-      localStorage.setItem('user', JSON.stringify(response.profileObj));
-
       var decodedHeader = jwt_decode(response.credential);
+      localStorage.setItem('user', JSON.stringify(decodedHeader));
       console.log(decodedHeader);
       // Destructure some of the props from that response
       const { name, picture, sub } = decodedHeader;
@@ -33,7 +32,6 @@ const Login = () => {
         })
         .catch((error) => console.log(error));
     } catch (e) {
-      localStorage.removeItem('user'); // Remove the 'user' key if the JWT is not valid
       console.log(e); // For debugging
     }
   };
