@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.75859563.css",
-    "main.js": "/static/js/main.663d7a09.js",
-    "static/js/726.2cff5721.chunk.js": "/static/js/726.2cff5721.chunk.js",
-    "static/media/share.mp4": "/static/media/share.f758eefc9ea32c312130.mp4",
-    "index.html": "/index.html",
-    "main.75859563.css.map": "/static/css/main.75859563.css.map",
-    "main.663d7a09.js.map": "/static/js/main.663d7a09.js.map",
-    "726.2cff5721.chunk.js.map": "/static/js/726.2cff5721.chunk.js.map"
+    "main.css": "/FriendNet/static/css/main.75859563.css",
+    "main.js": "/FriendNet/static/js/main.8fe38366.js",
+    "static/js/726.2cff5721.chunk.js": "/FriendNet/static/js/726.2cff5721.chunk.js",
+    "static/media/share.mp4": "/FriendNet/static/media/share.f758eefc9ea32c312130.mp4",
+    "index.html": "/FriendNet/index.html",
+    "main.75859563.css.map": "/FriendNet/static/css/main.75859563.css.map",
+    "main.8fe38366.js.map": "/FriendNet/static/js/main.8fe38366.js.map",
+    "726.2cff5721.chunk.js.map": "/FriendNet/static/js/726.2cff5721.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.75859563.css",
-    "static/js/main.663d7a09.js"
+    "static/js/main.8fe38366.js"
   ]
 }
