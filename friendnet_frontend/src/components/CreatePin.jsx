@@ -63,7 +63,10 @@ const CreatePin = ({ user }) => {
       };
       client.create(doc).then(() => {
         navigate('/');
-      });
+      })
+      .catch (
+        () => alert("Error saving pin")
+      )
     } else {
       setFields(true);
 
