@@ -14,7 +14,7 @@ const App = () => {
     if (user === null) {
       navigate('/login');
     }
-  }, [navigate]);
+  }, []);
   
 
   return (
