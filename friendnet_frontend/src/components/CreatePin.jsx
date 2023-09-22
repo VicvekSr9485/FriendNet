@@ -70,13 +70,13 @@ const CreatePin = ({ user }) => {
     } else {
       setFields(true);
 
-      setTimeout(
-        () => {
-          setFields(false);
-        },
-        2000,
-      );
-    }
+    //   setTimeout(
+    //     () => {
+    //       setFields(false);
+    //     },
+    //     2000,
+    //   );
+     }
   };
   return (
     <div className="flex flex-col justify-center items-center mt-5 lg:h-4/5">
