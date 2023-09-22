@@ -57,7 +57,7 @@ const Pin = ({ pin }) => {
   
     setTimeout(() => {
       setPostHovered(false);
-    }, 5000);
+    }, 10000);
   };
   
 
