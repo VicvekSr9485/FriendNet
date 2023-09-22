@@ -52,14 +52,22 @@ const Pin = ({ pin }) => {
     }
   };
 
+  const handleTouchStart = () => {
+    setPostHovered(true);
+  
+    setTimeout(() => {
+      setPostHovered(false);
+    }, 2000);
+  };
+  
+
   return (
     <div className="m-2">
       <div
         onMouseEnter={() => setPostHovered(true)}
         onMouseLeave={() => setPostHovered(false)}
         onClick={() => navigate(`/pin-detail/${_id}`)}
-        onTouchStart={() => setPostHovered(true)}
-        onTouchEnd={() => setPostHovered(false)}
+        onTouchStart={handleTouchStart}
         className=" relative cursor-zoom-in w-auto hover:shadow-lg rounded-lg overflow-hidden transition-all duration-500 ease-in-out"
       >
           {image && (
